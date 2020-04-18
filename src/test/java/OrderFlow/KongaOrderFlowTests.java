@@ -25,7 +25,7 @@ public class KongaOrderFlowTests {
 
         System.out.println(driver.getTitle());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        
+
         //Click on the SignIn/Signup button to sign in or register
         driver.findElement(By.xpath("//div[@class='_12e27_1r3kc']//a[1]")).click();
         //Enter your valid username
@@ -48,8 +48,17 @@ public class KongaOrderFlowTests {
         //Click on the search button to narrow down search of item in the search box
         driver.findElement(By.xpath("//section[@id='app-content-wrapper']//div//nav//div//div//div//div//form//button")).click();
         Thread.sleep(3500);
-        //Click on item to add to cart
+        //Click on item to add to cart and proceed to MyCart menu
         driver.findElement(By.xpath("//h3[contains(text(),'Sunlight 2in1 Spring Sensations Handw...')]")).click();
+        Thread.sleep(3500);
+        //Click on the increment button 3(three) times to increase the number of selected item in the cart to 4
+        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
+
+
 
     }
     public static void main(String[] args) throws InterruptedException {

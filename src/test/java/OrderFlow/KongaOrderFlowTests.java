@@ -40,7 +40,7 @@ public class KongaOrderFlowTests {
         category.moveToElement(Home_Kitchen).build().perform();
         Thread.sleep(3500);
         //Click the sub-cateory "Top Brands"
-        driver.findElement(By.xpath("//a[contains(text(),'Top Brands')]")).click();
+        driver.findElement(By.linkText("Top Brands")).click();
         Thread.sleep(3500);
         //Enter the item you intend to purchase into the search box which is "Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg" in this case
         driver.findElement(By.xpath("//form[@class='f6ed2_25oVd']//input[@id='jsSearchInput']")).sendKeys("Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg");
@@ -53,12 +53,11 @@ public class KongaOrderFlowTests {
         Thread.sleep(3500);
         //Click on the increment button 3(three) times to increase the number of selected item in the cart to 4
         driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-        Thread.sleep(3500);
         driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-        Thread.sleep(3500);
         driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-
-
+        Thread.sleep(1500);
+        //Click on the the "Buy Now" button to update items in the Cart
+        driver.findElement(By.xpath("(//button[@class='_0a08a_3czMG _6d187_pzjfk'])[2]")).click();
 
     }
     public static void main(String[] args) throws InterruptedException {

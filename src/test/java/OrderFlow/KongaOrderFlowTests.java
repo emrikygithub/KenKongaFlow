@@ -41,10 +41,10 @@ public class KongaOrderFlowTests {
         Actions category = new Actions(driver);
         WebElement Home_Kitchen = driver.findElement(By.linkText("Home and Kitchen"));
         category.moveToElement(Home_Kitchen).build().perform();
-        Thread.sleep(3500);
+        Thread.sleep(2000);
         //Click the sub-category "Top Brands"
         driver.findElement(By.linkText("Top Brands")).click();
-        Thread.sleep(3500);
+        Thread.sleep(2000);
         //Enter the item you intend to purchase into the search box which is "Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg" in this case
         driver.findElement(By.xpath("//form[@class='f6ed2_25oVd']//input[@id='jsSearchInput']")).sendKeys("Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg");
         //Click on the search button to narrow down search of item in the search box
@@ -71,20 +71,28 @@ public class KongaOrderFlowTests {
         driver.findElement(By.name("placeOrder")).click();
         //Locate the iFrame
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//iframe[@id='kpg-frame-component']"));
+        driver.findElement(By.id("kpg-frame-component"));
         //Switch into iFrame by id locator
         driver.switchTo().frame("kpg-frame-component");
         //Click on the card within the iFrame
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='channel-template']/div[2]/div/div[1]/button/div/span[1]")).click();
        //Input Your Card details
-        driver.findElement(By.id("card-number")).sendKeys("5569 4051 1277 3449");
-        driver.findElement(By.id("expiry")).sendKeys("10/21");
-        driver.findElement(By.id("cvv")).sendKeys("500");
-        driver.findElement(By.id("save-card-container")).sendKeys("1234");
-        //Click on the Pay Now button to pay for items
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id='validateCardForm']")).click();
+        driver.findElement(By.id("card-number")).sendKeys("5569 4051 1277 3449");
+        Thread.sleep(2000);
+        driver.findElement(By.id("expiry")).sendKeys("10/21");
+        Thread.sleep(2000);
+        driver.findElement(By.id("cvv")).sendKeys("500");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id='card-pin-holder']"));
+        //Locate the error message from the Card Number field and print
+        Thread.sleep(2000);
+        String actual_error = driver.findElement(By.id("card-number_unhappy")).getText();
+        System.out.println("Invalid card number");
+
+        driver.close();
+
 
 
 

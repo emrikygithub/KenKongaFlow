@@ -76,8 +76,9 @@ public class KongaOrderFlowTests {
         driver.switchTo().frame("kpg-frame-component");
         //Click on the card within the iFrame
         Thread.sleep(2000);
-        driver.findElement(By.id("kpg-frame-component")).click();
-
+        driver.findElement(By.xpath("//*[@id='channel-template']/div[2]/div/div[1]/button/div/span[1]")).click();
+       //Input Your Card details
+        
 
 
 

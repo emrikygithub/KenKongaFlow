@@ -52,8 +52,7 @@ public class KongaOrderFlowTests {
 
         //Click on Add to Cart button to add item to cart
         Thread.sleep(3500);
-        driver.findElement(By.cssSelector("div.ais-InstantSearch__root section.d6575_J-kZm._1eecb_eqPMu div.c6dfe_HidJc:nth-child(5) section._0863a_3x99A main._050ef_K0hT7 section._9cac3_2I9l4:nth-child(3) section.fc90c_2fTuR section._06822_e7mpG section._588b5_3MtNs ul.b49ee_2pjyI._58c31_2R34y._22339_3gQb9 li.bbe45_3oExY._22339_3gQb9 div.a2cf5_2S5q5.cf5dc_3HhOq div._4941f_1HCZm form:nth-child(2) div._2aac2_3bwnD._549f7_zvZ8u._49c0c_3Cv2D._977c5_2vBMq:nth-child(10) > button._0a08a_3czMG")).click();
-        //Click on the My Cart menu to proceed to cart
+        driver.findElement(By.xpath("(//div[contains(@class,'_2aac2_3bwnD _549f7_zvZ8u')]//button)[2]")).click();
         Thread.sleep(3500);
         driver.findElement(By.xpath("//a[contains(@class,'_79484_1sLEt _7ad32_SD12Y _16536_xxIKG')]//span[contains(text(),'My Cart')]")).click();
         //Increase the number of items in the cart to 4
@@ -67,8 +66,19 @@ public class KongaOrderFlowTests {
         //Click on the Pay Now option check button to enable continue to check out
         Thread.sleep(2000);
         driver.findElement(By.name("selectPaymentMethod")).click();
-        //Click on the Continue to Check out Button
+        //Click on the Continue to Payment Button
         Thread.sleep(2000);
+        driver.findElement(By.name("placeOrder")).click();
+        //Locate the iFrame
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//iframe[@id='kpg-frame-component']"));
+        //Switch into iFrame by id locator
+        driver.switchTo().frame("kpg-frame-component");
+        //Click on the card within the iFrame
+        Thread.sleep(2000);
+        driver.findElement(By.id("kpg-frame-component")).click();
+
+
 
 
 

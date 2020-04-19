@@ -6,8 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class KongaOrderFlowTests {
@@ -27,7 +30,7 @@ public class KongaOrderFlowTests {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //Click on the SignIn/Signup button to sign in or register
-       /* driver.findElement(By.xpath("//div[@class='_12e27_1r3kc']//a[1]")).click();
+        driver.findElement(By.xpath("//div[@class='_12e27_1r3kc']//a[1]")).click();
         //Enter your valid username
         driver.findElement(By.name("username")).sendKeys("emriky@gmail.com");
         //Enter your registered password
@@ -41,7 +44,7 @@ public class KongaOrderFlowTests {
         Thread.sleep(3500);
         //Click the sub-category "Top Brands"
         driver.findElement(By.linkText("Top Brands")).click();
-        Thread.sleep(3500);*/
+        Thread.sleep(3500);
         //Enter the item you intend to purchase into the search box which is "Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg" in this case
         driver.findElement(By.xpath("//form[@class='f6ed2_25oVd']//input[@id='jsSearchInput']")).sendKeys("Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg");
         //Click on the search button to narrow down search of item in the search box
@@ -54,11 +57,19 @@ public class KongaOrderFlowTests {
         Thread.sleep(3500);
         driver.findElement(By.xpath("//a[contains(@class,'_79484_1sLEt _7ad32_SD12Y _16536_xxIKG')]//span[contains(text(),'My Cart')]")).click();
         //Increase the number of items in the cart to 4
-        Thread.sleep(3500);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
+        driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
         driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
 
+        }
 
-    }
+
+
+
+
+
+
     public static void main(String[] args) throws InterruptedException {
         KongaOrderFlowTests test = new KongaOrderFlowTests();
         test.setUp();

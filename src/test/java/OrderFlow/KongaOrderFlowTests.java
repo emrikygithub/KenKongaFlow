@@ -39,25 +39,20 @@ public class KongaOrderFlowTests {
         WebElement Home_Kitchen = driver.findElement(By.linkText("Home and Kitchen"));
         category.moveToElement(Home_Kitchen).build().perform();
         Thread.sleep(3500);
-        //Click the sub-cateory "Top Brands"
+        //Click the sub-category "Top Brands"
         driver.findElement(By.linkText("Top Brands")).click();
         Thread.sleep(3500);
         //Enter the item you intend to purchase into the search box which is "Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg" in this case
         driver.findElement(By.xpath("//form[@class='f6ed2_25oVd']//input[@id='jsSearchInput']")).sendKeys("Sunlight 2in1 Spring Sensations Handwash Washing Powder 2kg");
-        Thread.sleep(3500);
         //Click on the search button to narrow down search of item in the search box
         driver.findElement(By.xpath("//section[@id='app-content-wrapper']//div//nav//div//div//div//div//form//button")).click();
+
+        //Click on Add to Cart button to add item to cart
         Thread.sleep(3500);
-        //Click on item to add to cart and proceed to MyCart menu
-        driver.findElement(By.xpath("//h3[contains(text(),'Sunlight 2in1 Spring Sensations Handw...')]")).click();
+        driver.findElement(By.cssSelector("div.ais-InstantSearch__root section.d6575_J-kZm._1eecb_eqPMu div.c6dfe_HidJc:nth-child(5) section._0863a_3x99A main._050ef_K0hT7 section._9cac3_2I9l4:nth-child(3) section.fc90c_2fTuR section._06822_e7mpG section._588b5_3MtNs ul.b49ee_2pjyI._58c31_2R34y._22339_3gQb9 li.bbe45_3oExY._22339_3gQb9 div.a2cf5_2S5q5.cf5dc_3HhOq div._4941f_1HCZm form:nth-child(2) div._2aac2_3bwnD._549f7_zvZ8u._49c0c_3Cv2D._977c5_2vBMq:nth-child(10) > button._0a08a_3czMG")).click();
         Thread.sleep(3500);
-        //Click on the increment button 3(three) times to increase the number of selected item in the cart to 4
-        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-        driver.findElement(By.xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div[1]//div[1]//button[2]")).click();
-        Thread.sleep(1500);
-        //Click on the the "Buy Now" button to update items in the Cart
-        driver.findElement(By.xpath("(//button[@class='_0a08a_3czMG _6d187_pzjfk'])[2]")).click();
+        //Click on the My Cart menu to proceed to cart
+        Thread.sleep(3500);
 
     }
     public static void main(String[] args) throws InterruptedException {

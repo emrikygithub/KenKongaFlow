@@ -61,8 +61,20 @@ public class KongaOrderFlowTests {
         driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
         driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
         driver.findElement(By.xpath("//button[contains(@name,'increment')]")).click();
+        //Click on Check out button to proceed to payment options
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[contains(text(),'Checkout')]")).click();
+        //Click on the Pay Now option check button to enable continue to check out
+        Thread.sleep(2000);
+        driver.findElement(By.name("selectPaymentMethod")).click();
+        //Click on the Continue to Check out Button
+        Thread.sleep(2000);
 
-        }
+
+
+
+
+    }
 
 
 

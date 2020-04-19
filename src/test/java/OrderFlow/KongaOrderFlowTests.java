@@ -78,7 +78,13 @@ public class KongaOrderFlowTests {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='channel-template']/div[2]/div/div[1]/button/div/span[1]")).click();
        //Input Your Card details
-        
+        driver.findElement(By.id("card-number")).sendKeys("5569 4051 1277 3449");
+        driver.findElement(By.id("expiry")).sendKeys("10/21");
+        driver.findElement(By.id("cvv")).sendKeys("500");
+        driver.findElement(By.id("save-card-container")).sendKeys("1234");
+        //Click on the Pay Now button to pay for items
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id='validateCardForm']")).click();
 
 
 

@@ -26,3 +26,4 @@
 [0418/084418.638:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0418/084418.638:ERROR:exception_snapshot_win.cc(98)] thread ID 7320 not found in process
 [0419/020257.032:ERROR:file_io_win.cc(179)] CreateFile C:\Users\EMRIKY\AppData\Local\Temp\scoped_dir14536_1159377407\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0419/230810.114:ERROR:file_io_win.cc(179)] CreateFile C:\Users\EMRIKY\AppData\Local\Temp\scoped_dir17120_1063368167\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)

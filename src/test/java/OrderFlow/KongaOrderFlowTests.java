@@ -85,7 +85,14 @@ public class KongaOrderFlowTests {
         Thread.sleep(2000);
         driver.findElement(By.id("cvv")).sendKeys("500");
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id='card-pin-holder']"));
+        driver.findElement(By.xpath("//*[@id='card-pin-new']")).click();
+        driver.findElements(By.xpath("//button[@value='9']")).get(0).click();
+        driver.findElements(By.xpath("//button[@value='1']")).get(0).click();
+        driver.findElements(By.xpath("//button[@value='1']")).get(0).click();
+        driver.findElements(By.xpath("//button[@value='5']")).get(0).click();
+
+
+
         //Locate the error message from the Card Number field and print
         Thread.sleep(2000);
         String actual_error = driver.findElement(By.id("card-number_unhappy")).getText();
